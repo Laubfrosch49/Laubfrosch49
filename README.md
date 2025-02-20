@@ -1,16 +1,26 @@
-## Hi there 👋
+<style>
+td, th {
+   border: none!important;
+}
+</style>
 
-<!--
-**Laubfrosch49/Laubfrosch49** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+[![Extremely froggy profile banner](https://github.com/Laubfrosch49/Laubfrosch49/blob/main/githubBanner.png?raw=true)](https://github.com/Laubfrosch49)
 
-Here are some ideas to get you started:
+[![trophy](https://github-profile-trophy.vercel.app/?username=Laubfrosch49&column=-1&margin-w=20&margin-h=20&no-bg=true&no-frame=true&theme=darkhub)](https://github.com/Laubfrosch49)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+![](https://komarev.com/ghpvc/?username=Laubfrosch49&color=green)
+
+
+<p align="center">
+  <img src="https://github.com/Laubfrosch49/Laubfrosch49/blob/main/frosch_icon_green.png?raw=true" width="12%"/>
+  <img src="http://github-readme-streak-stats.herokuapp.com?user=Laubfrosch49&card_width=700&theme=transparent&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&fire=51991a&currStreakNum=DDDDDD&sideNums=DDDDDD&currStreakLabel=59984E&sideLabels=59984E&dates=467540&stroke=46754075&ring=4675409B" width="65%" />
+  <img src="https://github.com/Laubfrosch49/Laubfrosch49/blob/main/frosch_icon_green.png?raw=true" width="12%" />
+</p>
+
+
+
+
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:27401f,30:573f29,100:448f31&height=100&section=footer" width="100%" align="center"/>
