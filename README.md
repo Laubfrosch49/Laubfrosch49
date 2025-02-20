@@ -15,9 +15,9 @@
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/output/github-snake-dark.svg" width="100%" align="center"/>
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/output/github-snake.svg" width="100%" align="center"/>
-  <img alt="github-snake" src="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/output/github-snake-forest.svg" width="100%" align="center"/>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/output/github-snake-forest-dark.svg" width="100%" align="center"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/output/github-snake-forest-light.svg" width="100%" align="center"/>
+  <img alt="github-snake" src="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/output/github-snake-forest.svg-dark" width="100%" align="center"/>
 </picture>
 
 
