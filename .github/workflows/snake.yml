@@ -25,10 +25,12 @@ jobs:
           # GitHub username to generate the animation for
           github_user_name: ${{ github.repository_owner }}
           # Define the output files and their configurations
+
+          # dist/github-snake-light.svg
+          # dist/github-snake-dark.svg?palette=github-dark
           outputs: |
-            dist/github-snake-light.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/github-snake-forest.svg?color_snake=#543b28&color_dots=#50b337,#448f31,#3a6b33,#34572a,#22401a
+            dist/github-snake-forest-light.svg?color_snake=#543b28&color_dots=#EBEDF0,#50b337,#3a6b33,#34572a,#22401a
+            dist/github-snake-forest-dark.svg?color_snake=#543b28&color_dots=#161B22,#50b337,#3a6b33,#34572a,#22401a
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # Step 3: Deploy the generated files to the 'output' branch
