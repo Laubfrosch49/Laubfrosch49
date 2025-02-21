@@ -62,6 +62,8 @@ jobs:
           plugin_languages_colors: 0:#50b337, 1:#3f822c, 2:#34572a, 3:#22401a, 4:#122b18, 5:#0b172b, 6:#241b0e 7:#664a2e
           plugin_languages_details: lines, bytes-size, percentage
           plugin_languages_indepth: yes
+          plugin_languages_ignored: >-
+            mcfunction
           
           retries: 3
           retries_delay: 300
