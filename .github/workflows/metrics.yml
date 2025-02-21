@@ -16,6 +16,10 @@ on:
 jobs:
   metrics:
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+    permissions:
+      contents: write
     steps:
       # Step 1: Checkout the repository
       - name: Checkout Repository
@@ -25,13 +29,13 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
-              filename:  metrics.plugin.leetcode.svg
-              token: ${{ secrets.METRICS_TOKEN }}
-              base: ""
-              plugin_leetcode: yes
-              plugin_leetcode_sections: solved, skills, recent
-              retries: 3
-              retries_delay: 300
+          token: ${{ secrets.METRICS_TOKEN }}
+          filename:  metrics.plugin.leetcode.svg
+          base: ""
+          plugin_leetcode: yes
+          plugin_leetcode_sections: solved, skills, recent
+          retries: 3
+          retries_delay: 300
 
 
       # Step 3: Deploy the generated files to the 'output' branch
