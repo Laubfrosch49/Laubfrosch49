@@ -1,4 +1,4 @@
-name: Update README
+name: Age Update README
 
 on:
   schedule:
@@ -26,7 +26,7 @@ jobs:
       - name: Alter berechnen
         id: calculate_age
         run: |
-          birthdate="2004-16-01"
+          birthdate="2004-01-16"
           current_date=$(date +%Y-%m-%d)
           birth_year=$(date -d "$birthdate" +%Y)
           current_year=$(date -d "$current_date" +%Y)
