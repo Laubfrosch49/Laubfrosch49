@@ -26,25 +26,41 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Metrics
+      - name: Leetcode Metrics
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
 
           output_action: commit
           committer_branch: metrics
-          committer_message: "chore: update metrics"
+          committer_message: "chore: update leetcode metrics"
           
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
+          filename: "metrics.leetcode.svg"
 
           plugin_leetcode: yes
           plugin_leetcode_sections: solved, skills, recent
 
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          retries: 3
+          retries_delay: 300
+
+      - name: Languages Metrics
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+
+          output_action: commit
+          committer_branch: metrics
+          committer_message: "chore: update languages metrics"
+          
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          filename: "metrics.languages.svg"
 
           plugin_languages: yes
+          plugin_languages_colors: 0:#50b337, 1:#3f822c, 2:#34572a, 3:#22401a, 4:#122b18, 5:#0b172b, 6:#241b0e 7:#664a2e
+          plugin_languages_details: lines, bytes-size, percentage
           plugin_languages_indepth: yes
           
           retries: 3
