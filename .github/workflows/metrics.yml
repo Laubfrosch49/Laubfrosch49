@@ -2,12 +2,17 @@
 # Feel free to reuse, edit and redistribute this workflow as you wish, no credits needed
 # See https://github.com/lowlighter/metrics for documentation about how to use metrics action
 
-name: Metrics
+name: GitHub Metrics
 on:
   # 🌏 Think about the planet! No need to update stats too frequently
-  schedule: [{cron: "0 0 * * *"}]
+  schedule:
+      - cron: "0 0 * * *"
   # 💡 The following line lets you run workflow manually from the action tab!
   workflow_dispatch:
+  # Trigger the workflow on pushes to the main branch
+  push:
+    branches:
+      - main
 jobs:
   metrics:
     runs-on: ubuntu-latest
@@ -21,15 +26,13 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
               filename:  metrics.plugin.leetcode.svg
-              # token: ${{ secrets.METRICS_TOKEN }}
+              token: ${{ secrets.METRICS_TOKEN }}
               base: ""
               plugin_leetcode: yes
               plugin_leetcode_sections: solved, skills, recent
-              
               retries: 3
               retries_delay: 300
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       # Step 3: Deploy the generated files to the 'output' branch
       - name: Deploy to Output Branch
