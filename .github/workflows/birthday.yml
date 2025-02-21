@@ -13,20 +13,20 @@ jobs:
       - name: Repository klonen
         uses: actions/checkout@v2
 
-      - name: README prüfen und aktuellen Platzhalterwert extrahieren
+      - name: Aktuelles Alter aus README extrahieren
         id: get_current_age
         run: |
-          if [ -f "README.md" ]; then
-            current_age=$(grep -oP '(?<=<!--AGE_PLACEHOLDER-->)[0-9]+' README.md || echo "not found")
-          else
-            current_age="not found"
+          current_age=$(grep -oP '(?<=<!--AGE_PLACEHOLDER-->)[0-9]+' README.md || echo "")
+          if [ -z "$current_age" ]; then
+            echo "Fehler: Konnte aktuelles Alter nicht aus README.md extrahieren."
+            exit 1
           fi
-          echo "current_age=$current_age" >> $GITHUB_ENV
+          echo "::set-output name=age::$current_age"
 
       - name: Alter berechnen
         id: calculate_age
         run: |
-          birthdate="2004-01-16"
+          birthdate="2000-01-01" # Ersetze dies durch dein tatsächliches Geburtsdatum
           current_date=$(date +%Y-%m-%d)
           birth_year=$(date -d "$birthdate" +%Y)
           current_year=$(date -d "$current_date" +%Y)
@@ -34,10 +34,12 @@ jobs:
           if [ $(date -d "$current_date" +%m%d) -lt $(date -d "$birthdate" +%m%d) ]; then
             age=$((age - 1))
           fi
-          echo "new_age=$age" >> $GITHUB_ENV
+          echo "::set-output name=age::$age"
 
       - name: README aktualisieren
         run: |
+          new_age=${{ steps.calculate_age.outputs.age }}
+          current_age=${{ steps.get_current_age.outputs.age }}
           if [ "$new_age" != "$current_age" ]; then
             sed -i "s/<!--AGE_PLACEHOLDER-->$current_age/<!--AGE_PLACEHOLDER-->$new_age/" README.md
             git config user.name "github-actions[bot]"
@@ -47,3 +49,4 @@ jobs:
             git push
           else
             echo "Alter hat sich nicht geändert. Kein Commit erforderlich."
+          fi
