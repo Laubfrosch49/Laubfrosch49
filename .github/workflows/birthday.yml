@@ -1,0 +1,49 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Täglich um Mitternacht UTC
+
+  workflow_dispatch: # Ermöglicht manuelles Triggern der Action
+          
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository klonen
+        uses: actions/checkout@v2
+
+      - name: README prüfen und aktuellen Platzhalterwert extrahieren
+        id: get_current_age
+        run: |
+          if [ -f "README.md" ]; then
+            current_age=$(grep -oP '(?<=<!--AGE_PLACEHOLDER-->)[0-9]+' README.md || echo "not found")
+          else
+            current_age="not found"
+          fi
+          echo "current_age=$current_age" >> $GITHUB_ENV
+
+      - name: Alter berechnen
+        id: calculate_age
+        run: |
+          birthdate="2004-16-01"
+          current_date=$(date +%Y-%m-%d)
+          birth_year=$(date -d "$birthdate" +%Y)
+          current_year=$(date -d "$current_date" +%Y)
+          age=$((current_year - birth_year))
+          if [ $(date -d "$current_date" +%m%d) -lt $(date -d "$birthdate" +%m%d) ]; then
+            age=$((age - 1))
+          fi
+          echo "new_age=$age" >> $GITHUB_ENV
+
+      - name: README aktualisieren
+        run: |
+          if [ "$new_age" != "$current_age" ]; then
+            sed -i "s/<!--AGE_PLACEHOLDER-->$current_age/<!--AGE_PLACEHOLDER-->$new_age/" README.md
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "Alter automatisch aktualisiert auf $new_age Jahre"
+            git push
+          else
+            echo "Alter hat sich nicht geändert. Kein Commit erforderlich."
