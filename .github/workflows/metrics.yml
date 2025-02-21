@@ -21,29 +21,22 @@ jobs:
     permissions:
       contents: write
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Repository
-        uses: actions/checkout@v3
 
-      - name: LeetCode
+      - name: Metrics
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
+
+          output_action: commit
+          committer_branch: metrics-renders
+          committer_message: "chore: update metrics"
+
           token: ${{ secrets.METRICS_TOKEN }}
-          filename:  metrics.plugin.leetcode.svg
           base: ""
+
           plugin_leetcode: yes
           plugin_leetcode_sections: solved, skills, recent
+          
           retries: 3
           retries_delay: 300
 
-
-      # Step 3: Deploy the generated files to the 'output' branch
-      - name: Deploy to Output Branch
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: output
-          # Optionally, you can set a custom commit message
-          commit_message: "Update metrics [skip ci]"
