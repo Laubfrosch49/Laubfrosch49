@@ -38,8 +38,8 @@ jobs:
 
       - name: Update README
         run: |
-          new_age=${{ steps.calculate_age.outputs.age }}
-          current_age=${{ steps.get_current_age.outputs.age }}
+          echo "Current Age: $current_age"
+          echo "New Age: $new_age"
           if [ "$new_age" != "$current_age" ]; then
             sed -i "s/<!--AGE_PLACEHOLDER-->$current_age/<!--AGE_PLACEHOLDER-->$new_age/" README.md
             git config user.name "github-actions[bot]"
