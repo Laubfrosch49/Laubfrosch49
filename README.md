@@ -54,6 +54,8 @@ I've been creating bugs since I was a tiny tadpole, and over the years, I've onl
   <img src="https://skillicons.dev/icons?i=latex" height="50" alt="latex logo"  />
   <img width="15" />
   <img src="https://skillicons.dev/icons?i=kotlin" height="50" alt="kotlin logo"  />
+  <img width="15" />
+  <img src="https://github.com/Laubfrosch49/Laubfrosch49/blob/main/CommandBlock.png" height="50" alt="mcfunction logo"  />
 </div>
 
 ###
