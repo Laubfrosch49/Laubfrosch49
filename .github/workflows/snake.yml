@@ -31,8 +31,8 @@ jobs:
           # dist/github-snake-forest-light.svg?color_snake=#543b28&color_dots=#EBEDF0,#50b337,#3f822c,#34572a,#22401a
           # dist/github-snake-forest-dark.svg?color_snake=#543b28&color_dots=#161B22,#50b337,#3f822c,#34572a,#22401a
           outputs: |
-            dist/github-snake-forest-light.svg?color_snake=#543b28&color_dots=#22401a,#34572a,#3f822c,#50b337,#87aee8
-            dist/github-snake-forest-dark.svg?color_snake=#543b28&color_dots=#22401a,#34572a,#3f822c,#50b337,#0b172b
+            dist/github-snake-forest-light.svg?color_snake=#543b28&color_dots=#87aee8,#22401a,#34572a,#3f822c,#50b337
+            dist/github-snake-forest-dark.svg?color_snake=#543b28&color_dots=#0b172b,#22401a,#34572a,#3f822c,#50b337
           # dist/github-snake-forest-light.svg?color_snake=#543b28&color_dots=#87aee8,#50b337,#3f822c,#34572a,#22401a
           # dist/github-snake-forest-dark.svg?color_snake=#543b28&color_dots=#0b172b,#50b337,#3f822c,#34572a,#22401a
         env:
