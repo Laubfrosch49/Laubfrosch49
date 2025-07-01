@@ -80,8 +80,8 @@ I've been creating bugs since I was a tiny tadpole, and over the years, I've onl
   <img src="https://skillicons.dev/icons?i=electron" height="50" alt="electron logo"  />
   <img width="15" />
   <img src="https://skillicons.dev/icons?i=unity" height="50" alt="unity logo"  />
-  <img width="15" />
-  <img src="https://skillicons.dev/icons?i=mysql" height="50" alt="mysql logo"  />
+  <!--<img width="15" />
+  <img src="https://skillicons.dev/icons?i=mysql" height="50" alt="mysql logo"  /> -->
 </div>
 
 <br>
@@ -89,6 +89,7 @@ I've been creating bugs since I was a tiny tadpole, and over the years, I've onl
 <br>
 <br>
 
+<!--
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=Laubfrosch49&show=reviews,prs_merged&show_icons=true&theme=transparent&title_color=50b337&text_color=3f822c&hide_border=true&icon_color=a1a1a1&include_all_commits=true&hide_rank=true"/>
   <img width="15" />
@@ -99,6 +100,7 @@ I've been creating bugs since I was a tiny tadpole, and over the years, I've onl
 <br>
 <br>
 <br>
+-->
 
 [comment]: <> (<img alt="github-snake" src="https://raw.githubusercontent.com/Laubfrosch49/Laubfrosch49/metrics/metrics.languages.svg"/>)
 
