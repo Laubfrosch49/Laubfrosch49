@@ -31,7 +31,7 @@
 
 <h3>About me</h3>
 
-I'm Piet, <!--AGE_PLACEHOLDER-->21 years old. 
+I'm Piet, <!--AGE_PLACEHOLDER-->22 years old. 
 
 I've been creating bugs since I was a tiny tadpole, and over the years, I've only gotten better at making them harder to find!
 
